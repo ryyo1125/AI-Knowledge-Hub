@@ -1,0 +1,53 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(git add:*)"
+    ]
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "(API|エンドポイント|データベース|スキーマ|バックエンド|backend|api|database|schema)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[Agent推奨] backend-architect: API/DB設計に最適'"
+          }
+        ]
+      },
+      {
+        "matcher": "(コンポーネント|UI|フロント|React|画面|component|frontend|ui|レイアウト)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[Agent推奨] frontend-developer: UI/React実装に最適'"
+          }
+        ]
+      },
+      {
+        "matcher": "(MCP|サーバー|TypeScript.*SDK|プロトコル|transport)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[Agent推奨] typescript-mcp-expert: MCP開発に最適'"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": []
+      }
+    ]
+  },
+  "agents": {
+    "autoSuggest": true,
+    "available": [
+      "backend-architect",
+      "frontend-developer",
+      "typescript-mcp-expert"
+    ]
+  }
+}

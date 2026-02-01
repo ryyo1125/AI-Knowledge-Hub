@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>記事詳細 - AI Coding Knowledge Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="flex h-screen">
+    <!-- サイドバー -->
+    <aside class="w-64 bg-gray-900 text-white flex flex-col">
+      <div class="p-4 border-b border-gray-700">
+        <h1 class="text-xl font-bold">AI Knowledge Hub</h1>
+      </div>
+      <nav class="flex-1 p-4">
+        <ul class="space-y-2">
+          <li>
+            <a href="index.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 hover:text-white">
+              <i data-lucide="home" class="w-5 h-5"></i>
+              ダッシュボード
+            </a>
+          </li>
+          <li>
+            <a href="articles.html" class="flex items-center gap-3 px-4 py-2 rounded-lg bg-gray-800 text-white">
+              <i data-lucide="file-text" class="w-5 h-5"></i>
+              記事一覧
+            </a>
+          </li>
+          <li>
+            <a href="sources.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 hover:text-white">
+              <i data-lucide="globe" class="w-5 h-5"></i>
+              ソース管理
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 hover:text-white">
+              <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+              レポート
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- メインコンテンツ -->
+    <main class="flex-1 overflow-auto">
+      <!-- ヘッダー -->
+      <header class="bg-white shadow px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+          <a href="articles.html" class="text-gray-600 hover:text-gray-900 flex items-center gap-1">
+            <i data-lucide="arrow-left" class="w-5 h-5"></i>
+            戻る
+          </a>
+          <span class="text-gray-300">|</span>
+          <h2 class="text-xl font-semibold text-gray-800">記事詳細</h2>
+        </div>
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
+          未レビュー
+        </span>
+      </header>
+
+      <div class="p-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- 左側: 記事情報 -->
+          <div class="lg:col-span-2 space-y-6">
+            <!-- 記事ヘッダー -->
+            <div class="bg-white rounded-lg shadow p-6">
+              <h1 class="text-2xl font-bold text-gray-900 mb-4">
+                Claude Code新機能：MCPサーバー連携が追加されました
+              </h1>
+              <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                <div class="flex items-center gap-1">
+                  <i data-lucide="globe" class="w-4 h-4"></i>
+                  <span>Zenn</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <i data-lucide="calendar" class="w-4 h-4"></i>
+                  <span>2026-01-30</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <i data-lucide="clock" class="w-4 h-4"></i>
+                  <span>収集: 2026-01-30 06:15</span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 rounded bg-blue-100 text-blue-700 text-sm">Claude</span>
+                <span class="px-2 py-1 rounded bg-blue-100 text-blue-700 text-sm">MCP</span>
+                <span class="px-2 py-1 rounded bg-blue-100 text-blue-700 text-sm">ツール連携</span>
+              </div>
+              <a href="#" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800" target="_blank">
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+                元記事を開く
+              </a>
+            </div>
+
+            <!-- AI要約 -->
+            <div class="bg-white rounded-lg shadow p-6">
+              <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                <i data-lucide="cpu" class="w-5 h-5 text-purple-600"></i>
+                AI要約
+              </h3>
+              <p class="text-gray-700 leading-relaxed">
+                Claude CodeにMCPサーバー機能が追加され、外部ツールとの連携が可能になりました。これにより、データベース、API、ファイルシステムなど様々な外部リソースにアクセスしながらコーディング支援を受けられるようになります。設定方法と活用例を詳しく解説しています。
+              </p>
+            </div>
+
+            <!-- 記事本文プレビュー -->
+            <div class="bg-white rounded-lg shadow p-6">
+              <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                <i data-lucide="file-text" class="w-5 h-5 text-gray-600"></i>
+                記事本文（抜粋）
+              </h3>
+              <div class="prose prose-sm max-w-none text-gray-700">
+                <p>
+                  Claude Codeの最新アップデートで、待望のMCPサーバー連携機能が追加されました。この機能により、Claude Codeは単なるコード生成ツールから、外部システムと連携した本格的な開発支援環境へと進化しました。
+                </p>
+                <h4 class="text-base font-semibold mt-4 mb-2">MCPサーバーとは</h4>
+                <p>
+                  MCP（Model Context Protocol）は、AIモデルが外部ツールやデータソースと安全に通信するためのプロトコルです。これにより、Claude Codeは以下のような操作が可能になります：
+                </p>
+                <ul class="list-disc list-inside mt-2 space-y-1">
+                  <li>データベースへの直接クエリ実行</li>
+                  <li>外部APIの呼び出し</li>
+                  <li>ファイルシステムの操作</li>
+                  <li>カスタムツールの実行</li>
+                </ul>
+                <p class="mt-4 text-gray-500 italic">
+                  ... 以下省略（全文は元記事を参照）
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右側: 評価・レビュー -->
+          <div class="space-y-6">
+            <!-- AI評価 -->
+            <div class="bg-white rounded-lg shadow p-6">
+              <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                <i data-lucide="brain" class="w-5 h-5 text-purple-600"></i>
+                AI評価
+              </h3>
+              <div class="space-y-4">
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-sm font-medium text-gray-700">重要度</span>
+                    <span class="text-yellow-500">★★★★☆</span>
+                  </div>
+                  <p class="text-xs text-gray-500">開発効率に大きく影響する新機能の情報</p>
+                </div>
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-sm font-medium text-gray-700">有用度</span>
+                    <span class="text-yellow-500">★★★★☆</span>
+                  </div>
+                  <p class="text-xs text-gray-500">具体的な設定方法と活用例が記載</p>
+                </div>
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-sm font-medium text-gray-700">難易度</span>
+                    <span class="text-yellow-500">★★★☆☆</span>
+                  </div>
+                  <p class="text-xs text-gray-500">基礎知識があれば1時間程度で理解可能</p>
+                </div>
+              </div>
+              <div class="mt-4 pt-4 border-t border-gray-200">
+                <p class="text-xs text-gray-400">
+                  分析日時: 2026-01-30 06:20
+                </p>
+              </div>
+            </div>
+
+            <!-- 人間評価フォーム -->
+            <div class="bg-white rounded-lg shadow p-6">
+              <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                <i data-lucide="user" class="w-5 h-5 text-blue-600"></i>
+                人間評価
+              </h3>
+              <form class="space-y-4">
+                <!-- 重要度 -->
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">重要度</label>
+                  <div class="flex gap-2">
+                    <button type="button" class="score-btn w-10 h-10 rounded-lg border-2 border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-600 font-medium" data-score="1">1</button>
+                    <button type="button" class="score-btn w-10 h-10 rounded-lg border-2 border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-600 font-medium" data-score="2">2</button>
+                    <button type="button" class="score-btn w-10 h-10 rounded-lg border-2 border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-600 font-medium" data-score="3">3</button>
+                    <button type="button" class="score-btn w-10 h-10 rounded-lg border-2 border-blue-500 bg-blue-50 text-blue-600 font-medium" data-score="4">4</button>
+                    <button type="button" class="score-btn w-10 h-10 rounded-lg border-2 border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-600 font-medium" data-score="5">5</button>
+                  </div>
+                </div>
+
+                <!-- 有用度 -->
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">有用度</label>
+                  <div class="flex gap-2">
+                    <button type="button" class="score-btn w-10 h-10 rounded-lg border-2 border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-600 font-medium" data-score="1">1</button>
+                    <button type="button" class="score-btn w-10 h-10 rounded-lg border-2 border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-600 font-medium" data-score="2">2</button>
+                    <button type="button" class="score-btn w-10 h-10 rounded-lg border-2 border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-600 font-medium" data-score="3">3</button>
+                    <button type="button" class="score-btn w-10 h-10 rounded-lg border-2 border-blue-500 bg-blue-50 text-blue-600 font-medium" data-score="4">4</button>
+                    <button type="button" class="score-btn w-10 h-10 rounded-lg border-2 border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-600 font-medium" data-score="5">5</button>
+                  </div>
+                </div>
+
+                <!-- 難易度 -->
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">難易度</label>
+                  <div class="flex gap-2">
+                    <button type="button" class="score-btn w-10 h-10 rounded-lg border-2 border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-600 font-medium" data-score="1">1</button>
+                    <button type="button" class="score-btn w-10 h-10 rounded-lg border-2 border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-600 font-medium" data-score="2">2</button>
+                    <button type="button" class="score-btn w-10 h-10 rounded-lg border-2 border-blue-500 bg-blue-50 text-blue-600 font-medium" data-score="3">3</button>
+                    <button type="button" class="score-btn w-10 h-10 rounded-lg border-2 border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-600 font-medium" data-score="4">4</button>
+                    <button type="button" class="score-btn w-10 h-10 rounded-lg border-2 border-gray-300 text-gray-600 hover:border-blue-500 hover:text-blue-600 font-medium" data-score="5">5</button>
+                  </div>
+                </div>
+
+                <!-- コメント -->
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">コメント</label>
+                  <textarea rows="3" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-blue-500 focus:border-blue-500" placeholder="メモやコメントを入力..."></textarea>
+                </div>
+
+                <!-- アクションボタン -->
+                <div class="flex gap-3 pt-4 border-t border-gray-200">
+                  <button type="button" class="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-medium">
+                    却下
+                  </button>
+                  <button type="button" class="flex-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 font-medium">
+                    承認
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- 再分析ボタン（分析失敗時のみ表示） -->
+            <div class="bg-red-50 rounded-lg border border-red-200 p-4 hidden" id="reanalyze-section">
+              <div class="flex items-start gap-3">
+                <i data-lucide="alert-triangle" class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5"></i>
+                <div class="flex-1">
+                  <h4 class="text-sm font-medium text-red-800">AI分析に失敗しました</h4>
+                  <p class="text-xs text-red-600 mt-1">エラー: タイムアウト</p>
+                  <button class="mt-2 px-3 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-700">
+                    再分析を実行
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    // スコアボタンのインタラクション（デモ用）
+    document.querySelectorAll('.score-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const parent = this.parentElement;
+        parent.querySelectorAll('.score-btn').forEach(b => {
+          b.classList.remove('border-blue-500', 'bg-blue-50', 'text-blue-600');
+          b.classList.add('border-gray-300', 'text-gray-600');
+        });
+        this.classList.remove('border-gray-300', 'text-gray-600');
+        this.classList.add('border-blue-500', 'bg-blue-50', 'text-blue-600');
+      });
+    });
+  </script>
+</body>
+</html>

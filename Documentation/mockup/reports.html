@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>レポート - AI Coding Knowledge Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="flex h-screen">
+    <!-- サイドバー -->
+    <aside class="w-64 bg-gray-900 text-white flex flex-col">
+      <div class="p-4 border-b border-gray-700">
+        <h1 class="text-xl font-bold">AI Knowledge Hub</h1>
+      </div>
+      <nav class="flex-1 p-4">
+        <ul class="space-y-2">
+          <li>
+            <a href="index.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 hover:text-white">
+              <i data-lucide="home" class="w-5 h-5"></i>
+              ダッシュボード
+            </a>
+          </li>
+          <li>
+            <a href="articles.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 hover:text-white">
+              <i data-lucide="file-text" class="w-5 h-5"></i>
+              記事一覧
+            </a>
+          </li>
+          <li>
+            <a href="sources.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 hover:text-white">
+              <i data-lucide="globe" class="w-5 h-5"></i>
+              ソース管理
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="flex items-center gap-3 px-4 py-2 rounded-lg bg-gray-800 text-white">
+              <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+              レポート
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- メインコンテンツ -->
+    <main class="flex-1 overflow-auto">
+      <!-- ヘッダー -->
+      <header class="bg-white shadow px-6 py-4 flex justify-between items-center">
+        <h2 class="text-xl font-semibold text-gray-800">レポート</h2>
+        <button onclick="openGenerateModal()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2">
+          <i data-lucide="file-plus" class="w-4 h-4"></i>
+          レポートを生成
+        </button>
+      </header>
+
+      <div class="p-6">
+        <!-- レポート一覧 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- レポートカード1 -->
+          <div class="bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900">週次レポート 2026年第5週</h3>
+                  <p class="text-sm text-gray-500">2026/01/27 - 2026/02/02</p>
+                </div>
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                  公開済み
+                </span>
+              </div>
+              <div class="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                <div class="flex items-center gap-1">
+                  <i data-lucide="file-text" class="w-4 h-4"></i>
+                  <span>15記事</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <i data-lucide="calendar" class="w-4 h-4"></i>
+                  <span>生成: 2026/02/01</span>
+                </div>
+              </div>
+              <div class="border-t border-gray-200 pt-4">
+                <h4 class="text-sm font-medium text-gray-700 mb-2">ハイライト</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• Claude Code MCP連携機能の追加</li>
+                  <li>• Anthropic APIの破壊的変更予告</li>
+                  <li>• AIコーディングベストプラクティス2026</li>
+                </ul>
+              </div>
+            </div>
+            <div class="px-6 py-3 bg-gray-50 border-t border-gray-200 flex justify-end gap-2">
+              <button onclick="openReportDetail()" class="px-3 py-1 text-sm text-blue-600 hover:bg-blue-50 rounded">
+                詳細を見る
+              </button>
+              <button class="px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded flex items-center gap-1">
+                <i data-lucide="copy" class="w-3 h-3"></i>
+                コピー
+              </button>
+            </div>
+          </div>
+
+          <!-- レポートカード2 -->
+          <div class="bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900">週次レポート 2026年第4週</h3>
+                  <p class="text-sm text-gray-500">2026/01/20 - 2026/01/26</p>
+                </div>
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                  公開済み
+                </span>
+              </div>
+              <div class="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                <div class="flex items-center gap-1">
+                  <i data-lucide="file-text" class="w-4 h-4"></i>
+                  <span>12記事</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <i data-lucide="calendar" class="w-4 h-4"></i>
+                  <span>生成: 2026/01/25</span>
+                </div>
+              </div>
+              <div class="border-t border-gray-200 pt-4">
+                <h4 class="text-sm font-medium text-gray-700 mb-2">ハイライト</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• Claude 3.5 Sonnet新機能解説</li>
+                  <li>• プロンプトエンジニアリング基礎</li>
+                  <li>• VSCode拡張機能アップデート</li>
+                </ul>
+              </div>
+            </div>
+            <div class="px-6 py-3 bg-gray-50 border-t border-gray-200 flex justify-end gap-2">
+              <button onclick="openReportDetail()" class="px-3 py-1 text-sm text-blue-600 hover:bg-blue-50 rounded">
+                詳細を見る
+              </button>
+              <button class="px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded flex items-center gap-1">
+                <i data-lucide="copy" class="w-3 h-3"></i>
+                コピー
+              </button>
+            </div>
+          </div>
+
+          <!-- レポートカード3（下書き） -->
+          <div class="bg-white rounded-lg shadow hover:shadow-md transition-shadow border-l-4 border-yellow-400">
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900">週次レポート 2026年第3週</h3>
+                  <p class="text-sm text-gray-500">2026/01/13 - 2026/01/19</p>
+                </div>
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                  下書き
+                </span>
+              </div>
+              <div class="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                <div class="flex items-center gap-1">
+                  <i data-lucide="file-text" class="w-4 h-4"></i>
+                  <span>8記事</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <i data-lucide="calendar" class="w-4 h-4"></i>
+                  <span>生成: 2026/01/18</span>
+                </div>
+              </div>
+              <div class="border-t border-gray-200 pt-4">
+                <h4 class="text-sm font-medium text-gray-700 mb-2">ハイライト</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• LLMアプリケーション設計パターン</li>
+                  <li>• RAGの実装ベストプラクティス</li>
+                </ul>
+              </div>
+            </div>
+            <div class="px-6 py-3 bg-yellow-50 border-t border-yellow-200 flex justify-end gap-2">
+              <button class="px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded">
+                編集
+              </button>
+              <button class="px-3 py-1 text-sm text-green-600 hover:bg-green-50 rounded">
+                公開
+              </button>
+            </div>
+          </div>
+
+          <!-- レポートカード4 -->
+          <div class="bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900">週次レポート 2026年第2週</h3>
+                  <p class="text-sm text-gray-500">2026/01/06 - 2026/01/12</p>
+                </div>
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                  公開済み
+                </span>
+              </div>
+              <div class="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                <div class="flex items-center gap-1">
+                  <i data-lucide="file-text" class="w-4 h-4"></i>
+                  <span>10記事</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <i data-lucide="calendar" class="w-4 h-4"></i>
+                  <span>生成: 2026/01/11</span>
+                </div>
+              </div>
+              <div class="border-t border-gray-200 pt-4">
+                <h4 class="text-sm font-medium text-gray-700 mb-2">ハイライト</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• 2026年AIコーディングトレンド予測</li>
+                  <li>• Claude API料金改定について</li>
+                  <li>• 効率的なコード生成のコツ</li>
+                </ul>
+              </div>
+            </div>
+            <div class="px-6 py-3 bg-gray-50 border-t border-gray-200 flex justify-end gap-2">
+              <button onclick="openReportDetail()" class="px-3 py-1 text-sm text-blue-600 hover:bg-blue-50 rounded">
+                詳細を見る
+              </button>
+              <button class="px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded flex items-center gap-1">
+                <i data-lucide="copy" class="w-3 h-3"></i>
+                コピー
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- レポート生成モーダル -->
+  <div id="generate-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-xl w-full max-w-md mx-4">
+      <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+        <h3 class="text-lg font-semibold text-gray-900">レポートを生成</h3>
+        <button onclick="closeGenerateModal()" class="text-gray-400 hover:text-gray-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="p-6 space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">期間</label>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs text-gray-500 mb-1">開始日</label>
+              <input type="date" value="2026-01-27" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-xs text-gray-500 mb-1">終了日</label>
+              <input type="date" value="2026-02-02" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+          </div>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <div class="flex items-start gap-3">
+            <i data-lucide="info" class="w-5 h-5 text-blue-600 flex-shrink-0"></i>
+            <div class="text-sm text-blue-800">
+              <p class="font-medium">対象記事</p>
+              <p class="mt-1">この期間内に承認された記事 <span class="font-bold">15件</span> がレポートに含まれます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="px-6 py-4 border-t border-gray-200 flex justify-end gap-3">
+        <button onclick="closeGenerateModal()" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50">
+          キャンセル
+        </button>
+        <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+          生成する
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- レポート詳細モーダル -->
+  <div id="detail-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-xl w-full max-w-3xl mx-4 max-h-[90vh] flex flex-col">
+      <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center flex-shrink-0">
+        <h3 class="text-lg font-semibold text-gray-900">週次レポート 2026年第5週</h3>
+        <div class="flex items-center gap-2">
+          <button class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded" title="Markdownをコピー">
+            <i data-lucide="copy" class="w-5 h-5"></i>
+          </button>
+          <button onclick="closeDetailModal()" class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+      <div class="p-6 overflow-y-auto flex-1">
+        <div class="prose prose-sm max-w-none">
+          <p class="text-gray-500 text-sm">2026/01/27 - 2026/02/02 | 15記事</p>
+
+          <h2>今週のハイライト</h2>
+          <p>今週は Claude Code の大型アップデートと、Anthropic API の重要な変更予告がありました。</p>
+
+          <h3>🔥 重要度: 高</h3>
+
+          <h4>【重要】Anthropic APIの破壊的変更について</h4>
+          <ul>
+            <li><strong>ソース:</strong> Anthropic Blog</li>
+            <li><strong>重要度:</strong> ★★★★★</li>
+            <li><strong>要約:</strong> 2026年Q2に予定されている破壊的変更。既存アプリケーションへの影響と移行方法が解説されています。</li>
+          </ul>
+
+          <h4>Claude Code新機能：MCPサーバー連携</h4>
+          <ul>
+            <li><strong>ソース:</strong> Zenn</li>
+            <li><strong>重要度:</strong> ★★★★☆</li>
+            <li><strong>要約:</strong> MCPサーバー連携により、外部ツールとの統合が可能に。設定方法と活用例を解説。</li>
+          </ul>
+
+          <h3>📚 重要度: 中</h3>
+
+          <h4>AIコーディングのベストプラクティス2026</h4>
+          <ul>
+            <li><strong>ソース:</strong> Qiita</li>
+            <li><strong>重要度:</strong> ★★★☆☆</li>
+            <li><strong>要約:</strong> 効率的なプロンプトの書き方からコードレビューまで、実践的なテクニック集。</li>
+          </ul>
+
+          <h3>📊 統計</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>カテゴリ</th>
+                <th>記事数</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Claude関連</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>API・SDK</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>プロンプトエンジニアリング</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>その他</td>
+                <td>2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="px-6 py-4 border-t border-gray-200 flex justify-end gap-3 flex-shrink-0">
+        <button onclick="closeDetailModal()" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50">
+          閉じる
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    function openGenerateModal() {
+      document.getElementById('generate-modal').classList.remove('hidden');
+      document.getElementById('generate-modal').classList.add('flex');
+    }
+
+    function closeGenerateModal() {
+      document.getElementById('generate-modal').classList.add('hidden');
+      document.getElementById('generate-modal').classList.remove('flex');
+    }
+
+    function openReportDetail() {
+      document.getElementById('detail-modal').classList.remove('hidden');
+      document.getElementById('detail-modal').classList.add('flex');
+    }
+
+    function closeDetailModal() {
+      document.getElementById('detail-modal').classList.add('hidden');
+      document.getElementById('detail-modal').classList.remove('flex');
+    }
+
+    // モーダル外クリックで閉じる
+    ['generate-modal', 'detail-modal'].forEach(id => {
+      document.getElementById(id).addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.classList.add('hidden');
+          this.classList.remove('flex');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

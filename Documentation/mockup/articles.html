@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>記事一覧 - AI Coding Knowledge Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="flex h-screen">
+    <!-- サイドバー -->
+    <aside class="w-64 bg-gray-900 text-white flex flex-col">
+      <div class="p-4 border-b border-gray-700">
+        <h1 class="text-xl font-bold">AI Knowledge Hub</h1>
+      </div>
+      <nav class="flex-1 p-4">
+        <ul class="space-y-2">
+          <li>
+            <a href="index.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 hover:text-white">
+              <i data-lucide="home" class="w-5 h-5"></i>
+              ダッシュボード
+            </a>
+          </li>
+          <li>
+            <a href="articles.html" class="flex items-center gap-3 px-4 py-2 rounded-lg bg-gray-800 text-white">
+              <i data-lucide="file-text" class="w-5 h-5"></i>
+              記事一覧
+            </a>
+          </li>
+          <li>
+            <a href="sources.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 hover:text-white">
+              <i data-lucide="globe" class="w-5 h-5"></i>
+              ソース管理
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 hover:text-white">
+              <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+              レポート
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- メインコンテンツ -->
+    <main class="flex-1 overflow-auto">
+      <!-- ヘッダー -->
+      <header class="bg-white shadow px-6 py-4 flex justify-between items-center">
+        <h2 class="text-xl font-semibold text-gray-800">記事一覧</h2>
+        <button class="p-2 rounded-lg hover:bg-gray-100">
+          <i data-lucide="settings" class="w-5 h-5 text-gray-600"></i>
+        </button>
+      </header>
+
+      <div class="p-6">
+        <!-- フィルター -->
+        <div class="bg-white rounded-lg shadow p-4 mb-6">
+          <div class="flex flex-wrap gap-4 items-center">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">ステータス</label>
+              <select class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-blue-500 focus:border-blue-500">
+                <option value="">すべて</option>
+                <option value="pending">未レビュー</option>
+                <option value="approved">承認済み</option>
+                <option value="rejected">却下</option>
+                <option value="analysis_failed">分析失敗</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">ソース</label>
+              <select class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-blue-500 focus:border-blue-500">
+                <option value="">すべて</option>
+                <option value="zenn">Zenn</option>
+                <option value="qiita">Qiita</option>
+                <option value="anthropic">Anthropic Blog</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">重要度</label>
+              <select class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-blue-500 focus:border-blue-500">
+                <option value="">すべて</option>
+                <option value="5">★★★★★ (5)</option>
+                <option value="4">★★★★☆ (4+)</option>
+                <option value="3">★★★☆☆ (3+)</option>
+              </select>
+            </div>
+            <div class="flex-1">
+              <label class="block text-sm font-medium text-gray-700 mb-1">検索</label>
+              <input type="text" placeholder="タイトルで検索..." class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div class="self-end">
+              <button class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 text-sm">
+                リセット
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 記事カード一覧 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <!-- 記事カード1 -->
+          <div class="bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+            <div class="p-4">
+              <div class="flex items-start justify-between mb-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800">
+                  未レビュー
+                </span>
+                <span class="text-yellow-500 text-sm">★★★★☆</span>
+              </div>
+              <a href="article-detail.html" class="block text-gray-900 font-medium hover:text-blue-600 mb-2">
+                Claude Code新機能：MCPサーバー連携が追加されました
+              </a>
+              <p class="text-sm text-gray-600 mb-3 line-clamp-2">
+                Claude CodeにMCPサーバー機能が追加され、外部ツールとの連携が可能になりました。これにより開発効率が大幅に向上...
+              </p>
+              <div class="flex items-center justify-between text-sm text-gray-500">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-100 text-gray-600 text-xs">Zenn</span>
+                  <span>2026-01-30</span>
+                </div>
+                <div class="flex gap-1">
+                  <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-700 text-xs">Claude</span>
+                  <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-700 text-xs">MCP</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-4 py-3 bg-gray-50 border-t border-gray-200 flex justify-end gap-2">
+              <a href="article-detail.html" class="px-3 py-1 text-sm text-blue-600 hover:bg-blue-50 rounded">
+                レビュー
+              </a>
+            </div>
+          </div>
+
+          <!-- 記事カード2 -->
+          <div class="bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+            <div class="p-4">
+              <div class="flex items-start justify-between mb-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
+                  承認済み
+                </span>
+                <span class="text-yellow-500 text-sm">★★★★★</span>
+              </div>
+              <a href="article-detail.html" class="block text-gray-900 font-medium hover:text-blue-600 mb-2">
+                【重要】Anthropic APIの破壊的変更について
+              </a>
+              <p class="text-sm text-gray-600 mb-3 line-clamp-2">
+                Anthropic APIの次期バージョンで破壊的変更が予定されています。既存のアプリケーションへの影響と移行方法...
+              </p>
+              <div class="flex items-center justify-between text-sm text-gray-500">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-100 text-gray-600 text-xs">Anthropic Blog</span>
+                  <span>2026-01-29</span>
+                </div>
+                <div class="flex gap-1">
+                  <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-700 text-xs">API</span>
+                  <span class="px-2 py-0.5 rounded bg-red-100 text-red-700 text-xs">Breaking</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-4 py-3 bg-gray-50 border-t border-gray-200 flex justify-end gap-2">
+              <a href="article-detail.html" class="px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded">
+                詳細
+              </a>
+            </div>
+          </div>
+
+          <!-- 記事カード3 -->
+          <div class="bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+            <div class="p-4">
+              <div class="flex items-start justify-between mb-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800">
+                  未レビュー
+                </span>
+                <span class="text-yellow-500 text-sm">★★★☆☆</span>
+              </div>
+              <a href="article-detail.html" class="block text-gray-900 font-medium hover:text-blue-600 mb-2">
+                AIコーディングのベストプラクティス2026
+              </a>
+              <p class="text-sm text-gray-600 mb-3 line-clamp-2">
+                2026年のAIコーディングにおけるベストプラクティスをまとめました。効率的なプロンプトの書き方から...
+              </p>
+              <div class="flex items-center justify-between text-sm text-gray-500">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-100 text-gray-600 text-xs">Qiita</span>
+                  <span>2026-01-28</span>
+                </div>
+                <div class="flex gap-1">
+                  <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-700 text-xs">AI</span>
+                  <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-700 text-xs">Coding</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-4 py-3 bg-gray-50 border-t border-gray-200 flex justify-end gap-2">
+              <a href="article-detail.html" class="px-3 py-1 text-sm text-blue-600 hover:bg-blue-50 rounded">
+                レビュー
+              </a>
+            </div>
+          </div>
+
+          <!-- 記事カード4（分析失敗） -->
+          <div class="bg-white rounded-lg shadow hover:shadow-md transition-shadow border-l-4 border-red-500">
+            <div class="p-4">
+              <div class="flex items-start justify-between mb-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800">
+                  <i data-lucide="alert-triangle" class="w-3 h-3 mr-1"></i>
+                  分析失敗
+                </span>
+                <span class="text-gray-400 text-sm">---</span>
+              </div>
+              <a href="article-detail.html" class="block text-gray-900 font-medium hover:text-blue-600 mb-2">
+                プロンプトエンジニアリング入門
+              </a>
+              <p class="text-sm text-gray-600 mb-3 line-clamp-2">
+                プロンプトエンジニアリングの基礎から応用まで、実践的なテクニックを解説します...
+              </p>
+              <div class="flex items-center justify-between text-sm text-gray-500">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-100 text-gray-600 text-xs">Zenn</span>
+                  <span>2026-01-27</span>
+                </div>
+                <span class="text-red-500 text-xs">タイムアウトエラー</span>
+              </div>
+            </div>
+            <div class="px-4 py-3 bg-red-50 border-t border-red-200 flex justify-end gap-2">
+              <button class="px-3 py-1 text-sm text-white bg-red-600 hover:bg-red-700 rounded">
+                再分析
+              </button>
+            </div>
+          </div>
+
+          <!-- 記事カード5 -->
+          <div class="bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+            <div class="p-4">
+              <div class="flex items-start justify-between mb-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800">
+                  却下
+                </span>
+                <span class="text-yellow-500 text-sm">★★☆☆☆</span>
+              </div>
+              <a href="article-detail.html" class="block text-gray-900 font-medium hover:text-blue-600 mb-2">
+                初心者向け：Pythonで始めるプログラミング
+              </a>
+              <p class="text-sm text-gray-600 mb-3 line-clamp-2">
+                プログラミング完全初心者向けの入門記事です。Pythonの基本構文から...
+              </p>
+              <div class="flex items-center justify-between text-sm text-gray-500">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-100 text-gray-600 text-xs">Qiita</span>
+                  <span>2026-01-26</span>
+                </div>
+                <div class="flex gap-1">
+                  <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-700 text-xs">Python</span>
+                  <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-700 text-xs">入門</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-4 py-3 bg-gray-50 border-t border-gray-200 flex justify-end gap-2">
+              <a href="article-detail.html" class="px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded">
+                詳細
+              </a>
+            </div>
+          </div>
+
+          <!-- 記事カード6 -->
+          <div class="bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+            <div class="p-4">
+              <div class="flex items-start justify-between mb-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
+                  承認済み
+                </span>
+                <span class="text-yellow-500 text-sm">★★★★☆</span>
+              </div>
+              <a href="article-detail.html" class="block text-gray-900 font-medium hover:text-blue-600 mb-2">
+                Claude 3.5 Sonnetの新機能詳細解説
+              </a>
+              <p class="text-sm text-gray-600 mb-3 line-clamp-2">
+                Claude 3.5 Sonnetの新しい機能について詳しく解説します。コード生成能力の向上...
+              </p>
+              <div class="flex items-center justify-between text-sm text-gray-500">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-100 text-gray-600 text-xs">Anthropic Blog</span>
+                  <span>2026-01-25</span>
+                </div>
+                <div class="flex gap-1">
+                  <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-700 text-xs">Claude</span>
+                  <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-700 text-xs">Release</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-4 py-3 bg-gray-50 border-t border-gray-200 flex justify-end gap-2">
+              <a href="article-detail.html" class="px-3 py-1 text-sm text-gray-600 hover:bg-gray-100 rounded">
+                詳細
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ページネーション -->
+        <div class="mt-6 flex items-center justify-between">
+          <p class="text-sm text-gray-600">
+            全 <span class="font-medium">45</span> 件中 <span class="font-medium">1-6</span> 件を表示
+          </p>
+          <nav class="flex gap-1">
+            <button class="px-3 py-1 rounded border border-gray-300 text-gray-400 cursor-not-allowed" disabled>
+              前へ
+            </button>
+            <button class="px-3 py-1 rounded bg-blue-600 text-white">1</button>
+            <button class="px-3 py-1 rounded border border-gray-300 text-gray-700 hover:bg-gray-50">2</button>
+            <button class="px-3 py-1 rounded border border-gray-300 text-gray-700 hover:bg-gray-50">3</button>
+            <button class="px-3 py-1 rounded border border-gray-300 text-gray-700 hover:bg-gray-50">...</button>
+            <button class="px-3 py-1 rounded border border-gray-300 text-gray-700 hover:bg-gray-50">8</button>
+            <button class="px-3 py-1 rounded border border-gray-300 text-gray-700 hover:bg-gray-50">
+              次へ
+            </button>
+          </nav>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
