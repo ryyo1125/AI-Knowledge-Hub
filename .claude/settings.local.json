@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(ls:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\ndocs: AI Knowledge Hub プロジェクト初期設定\n\n## 概要\nAIコーディング情報を収集・分析・管理するナレッジハブシステム\n\n## 含まれるファイル\n- 要件定義書（PRD_01〜05）\n- UI仕様書・HTMLモックアップ（5画面）\n- MVP実装タスク一覧（40タスク/6フェーズ）\n- 評価基準定義（重要度/有用度/難易度）\n\n## Claude Code設定\n- カスタムスキル（spec-writer, knowhow-editor, knowledge-keeper）\n- カスタムAgent（backend-architect, frontend-developer, typescript-mcp-expert）\n- カスタムコマンド（activate, handoff, check-project, git-safety-check）\n\n## 技術スタック\n- Next.js 14 \\(App Router\\)\n- Supabase \\(PostgreSQL\\)\n- Claude API \\(Haiku\\)\n- Tailwind CSS\nEOF\n\\)\")",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)"
     ]
   },
   "hooks": {
@@ -33,6 +38,15 @@
             "command": "echo '[Agent推奨] typescript-mcp-expert: MCP開発に最適'"
           }
         ]
+      },
+      {
+        "matcher": "(GitHub Actions|CI/CD|ワークフロー|workflow|デプロイ自動化|actions|yml.*deploy)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[Agent推奨] github-actions-expert: CI/CDワークフロー設計に最適'"
+          }
+        ]
       }
     ],
     "PostToolUse": [
@@ -47,7 +61,8 @@
     "available": [
       "backend-architect",
       "frontend-developer",
-      "typescript-mcp-expert"
+      "typescript-mcp-expert",
+      "github-actions-expert"
     ]
   }
 }

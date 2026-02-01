@@ -272,6 +272,7 @@ SuperClaudeフレームワークをこのプロジェクトで活用する。
 | `backend-architect` | API設計、DB、スケーラビリティ | API, database, schema, バックエンド |
 | `frontend-developer` | React、UI、アクセシビリティ | コンポーネント, UI, React, 画面 |
 | `typescript-mcp-expert` | MCP Server開発 | MCP, transport, SDK |
+| `github-actions-expert` | CI/CD、ワークフロー、セキュリティ | GitHub Actions, workflow, デプロイ自動化 |
 
 ### Agent活用ルール
 
@@ -291,6 +292,10 @@ Task agent: frontend-developer
 # MCP開発時
 Task agent: typescript-mcp-expert
 → MCPサーバー構築、ツール実装、トランスポート設定
+
+# CI/CD構築時
+Task agent: github-actions-expert
+→ ワークフロー設計、セキュリティ設定、デプロイ自動化
 ```
 
 ### 本プロジェクトでの活用シナリオ
@@ -302,3 +307,6 @@ Task agent: typescript-mcp-expert
 | レビュー画面UI | `frontend-developer` |
 | Claude API統合設計 | `backend-architect` |
 | 将来のMCP拡張 | `typescript-mcp-expert` |
+| Vercelデプロイ自動化 | `github-actions-expert` |
+| PR時の自動テスト設定 | `github-actions-expert` |
+| セキュリティスキャン導入 | `github-actions-expert` |
