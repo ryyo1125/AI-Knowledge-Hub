@@ -10,6 +10,9 @@
 - モックアップ・仕様書・TASKS.md整合性チェック完了（矛盾なし）
 - 状態遷移仕様書作成（PRD_05_State_Transitions.md v1.1）
 - Mermaid図形式への変換、spec-writerスキル更新
+- Git初期化・GitHub連携（https://github.com/ryyo1125/AI-Knowledge-Hub）
+- README.md作成・プッシュ
+- CLAUDE.md拡張（3層実行ルール、完了条件チェックリスト追加）
 
 ---
 
